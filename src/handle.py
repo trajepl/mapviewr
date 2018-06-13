@@ -20,6 +20,29 @@ def handle(fn):
             data.append(traj_dic)
         json.dump(data, open('traj_100.js', 'w'))
 
+def handle_ret(fn):
+    data = []
+    with open(fn, 'r') as tin:
+        traj = tin.readlines()
+        i = 0;
+        for line in traj:
+            traj_dic = {
+                    'geometry':{
+                        'type': 'Point',
+                        'coordinates':[]
+                        }
+                    }
+
+            line = line.strip().split(' ')
+            line = [float(x) for x in line]
+            traj_dic['geometry']['coordinates'].append(line[1])
+            traj_dic['geometry']['coordinates'].append(line[2])
+            traj_dic['time'] = i 
+            i += 1
+            data.append(traj_dic)
+    json.dump(data, open('ret.js', 'w'))
 
 if __name__ == '__main__':
-    handle('traj_gps.txt')
+    # handle('traj_gps.txt')
+    handle_ret('result.txt')
+

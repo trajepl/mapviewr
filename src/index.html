@@ -27,6 +27,7 @@
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
     <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
     <script type="text/javascript" src="traj_100.js"></script>
+    <script type="text/javascript" src="ret.js"></script>
     <script type="text/javascript">
 
         // 百度地图API功能
@@ -177,6 +178,18 @@
         });
 
         // 构造数据
+        var line = [];
+        for (var i = 0; i < timeData.length; i += 1) {
+            line.push(timeData[i]['geometry']['coordinates']);
+        }
+        console.log(line);
+        var geometry = {
+            'geometry':  {
+                'type': 'LineString',
+                'coordinates': line
+            }
+        };
+        data.push(geometry);
 
         var dataSet = new mapv.DataSet(data);
 
@@ -189,25 +202,25 @@
         }
 
         var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
-
+        
         var dataSet = new mapv.DataSet(timeData);
 
         var options = {
-            fillStyle: 'rgba(255, 250, 250, 0.9)',
+            fillStyle: 'yellow',
             globalCompositeOperation: 'lighter',
-            size: 1.5,
+            size: 5,
             animation: {
                 type: 'time',
                 stepsRange: {
                     start: 0,
-                    end: 100
+                    end: 355 
                 },
-                trails: 1,
+                trails: 3,
                 duration: 5,
             },
             draw: 'simple'
         }
-
+    
         var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
 
     </script>
