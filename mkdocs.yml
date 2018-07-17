@@ -1,0 +1,51 @@
+# Site information
+site_name: Barrier
+site_description: Open-source KVM software
+site_url: https://debauchee.github.io/barrier
+site_author: Adrian Lucrèce Céleste
+
+# Repo info
+repo_name: barrier
+repo_url: https://github.com/debauchee/barrier
+
+# Copyright
+copyright: © 2018 Debauchee Open-Source Group
+
+# Configuration
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue'
+  logo:
+    icon: 'library_books'
+  feature:
+    tabs: true
+
+# Customization
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/debauchee'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - meta
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
