@@ -20,6 +20,7 @@ theme:
     icon: 'library_books'
   feature:
     tabs: true
+  favicon: assets/images/barrier.png
 
 # Customization
 extra:
@@ -49,3 +50,15 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.superfences
   - pymdownx.tilde
+
+# pages
+pages:
+  - Introduction: index.md
+  - Initial Setup: initial-setup.md
+  - Configure the Server: Configure-the-Server.md
+  - Filing an Issue: filing-an-issue.md
+  - Platforms:
+      - FreeBSD: platforms/freebsd.md
+      - Linux: platforms/linux.md
+      - macOS: platforms/macos.md
+      - Windows: platforms/windows.md
